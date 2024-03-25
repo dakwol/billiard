@@ -1,0 +1,271 @@
+@use "../../scss/" as *;
+
+.header{
+    padding: 0;
+    margin: 20rem 0 8rem 0;
+
+    &.mobile{
+        width: 100%;
+        position: fixed;
+        z-index: 1000;
+        top: 0;
+        left: 0;
+        padding: 12rem 16rem;
+        margin: 0;
+        background-color: #05080F;
+    }
+}
+
+
+.containerHeader{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+
+        .lgButton{
+            padding: 4rem 12rem 4rem 8rem;
+            background-color: inherit;
+            border-radius: 16rem;
+            height: 32rem;
+            border: 1rem solid var(--gray-400);
+
+            @include fnt(14, 16, $weight: 400, $color: var(--gray-400), $font: $PTMono);
+
+            &:hover{
+                background-color: var(--white);
+                color: var(--black)
+            }
+
+            object{
+
+            }
+        }
+
+        .logo{
+            display: flex;
+            gap: 8rem;
+            cursor: pointer;
+        }
+        .logoTitle {
+            @include fnt(16,24, $weight: 700, $color: var(--white) );
+        }
+    
+       
+        .logoSvoi{
+            width: auto;
+            height: 40rem;
+            @include mobile{
+                width: 40rem;
+               height: 40rem;
+            }
+        }
+
+        .logoText{
+            @include fnt(14, 18, $weight: 500, $font: $fontText, $color: var(--gray-800));
+            max-width: 201rem;
+
+            @include mobile{
+                @include fnt(12, 15, $weight: 500, $font: $fontText, $color: var(--gray-800));
+            }
+        }
+
+        .linkHeader{
+            @include fnt(16, 24, $weight: 500, $font: $PTMono, $color: var(--gray-400));
+            transition: .1s ease-in-out;
+            cursor: pointer;
+            margin-left: 100rem;
+
+            &:hover{
+                color: var(--white)
+            }
+        }
+
+    .userHeaderContainer{
+        display: flex;
+        align-items: center;
+        grid-gap: 12rem;
+
+        @include tablet{
+            position: absolute;
+        }
+
+        .nav{
+            display: flex;
+            align-items: center;
+            gap: 24rem;
+            padding: 10rem 0;
+
+            @include tablet {
+                position:fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 0;
+                z-index: 100;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-start;
+                background-color: var(--white);
+                opacity: 0;
+                pointer-events: none;
+                transition: .1s ease-in-out;
+                border-radius: 0 0 12rem 12rem;
+                padding: 0 8rem;
+    
+                &.active{
+                    opacity: 1;
+                    pointer-events: all;
+                    height: fit-content;
+                    gap: 6rem;
+                    justify-content: flex-end;
+                    padding: 8rem 16rem;
+                    padding-top: 64rem;
+                }
+    
+                a{
+                    color: var(--white);
+                    padding: 8rem 0;
+                }
+    
+                .button__container{
+                    background-color: inherit;
+                    padding: 8rem 0;
+                }
+            }
+
+            .navItem{
+                @include fnt(14, 20,$weight: 400, $font: $fontText, $color: var(--gray-700));
+
+                &.work{
+                    color: var(--orange-dark-500);
+                }
+            }
+        }
+
+        .userName{
+            text-align: end;
+            @include fnt(14, 18, $weight: 400, $font: $fontText, $color: var(--gray-500));
+            .lastname{
+                @include fnt(14, 18, $weight: 600, $font: $fontText, $color: var(--gray-800));
+            }
+        }
+
+        .whiteButton{
+            flex-direction: row-reverse;
+            grid-gap: 4rem;
+            background-color: var(--white);
+            border: 1rem solid var(--gray-300);
+            box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+            padding: 10rem 10rem 10rem 16rem;
+            border-radius: 8rem;
+
+            @include fnt(14, 20, $weight: 500, $font: $fontText,$color: var(--gray-700));
+            object{
+                margin-right: 0;
+            }
+
+            &:hover{
+                background-color: var(--blue);
+                color: var(--white);
+            }
+
+            @include tablet{
+                padding: 8rem !important;
+            }
+        }
+    }
+}
+
+.burgerMenu{
+    content: '';
+    width: 30rem;
+    height: 3rem;
+    background-color: var(--gray-900);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 1000;
+
+    &::before{
+        position: absolute;
+        top: -10rem;
+        content: '';
+        width: 30rem;
+        height: 3rem;
+        background-color: var(--gray-900);
+    }
+    &::after{
+        position: absolute;
+        bottom: -10rem;
+        content: '';
+        width: 30rem;
+        height: 3rem;
+        background-color: var(--gray-900);
+    }
+
+    &.active{
+        transform: rotateZ(45deg);
+        
+    &::before{
+        top: 0;
+        transform: rotateZ(90deg);
+    }
+    &::after{
+        display: none;
+    }
+    }
+}
+
+.buttonHeaderContainer{
+    display: flex;
+    gap: 8rem;
+}
+
+.whiteOrangeButton{
+    display: flex;
+    flex-direction: row-reverse;
+    padding: 12rem 20rem !important;
+    border: 1rem solid var(--orange);
+    border-radius: 8rem;
+    height: 44rem;
+    @include fnt(16, 20, $weight: 500,$font:$fontText, $color: var(--orange-dark-500));
+    background-color: inherit;
+    gap: 8rem;
+
+    &:hover{
+        background-color: inherit;
+    }
+
+    object{
+        margin: 0;
+    }
+}
+.orangeButton{
+    display: flex;
+    flex-direction: row-reverse;
+    padding: 12rem 20rem !important;
+    border: 1rem solid var(--orange);
+    border-radius: 8rem;
+    height: 44rem;
+    @include fnt(16, 20, $weight: 500, $font:$fontUI, $color: var(--white));
+    background-color: var(--orange-dark-500);
+    gap: 8rem;
+
+    &:hover{
+        background-color: inherit;
+        color: var(--orange-dark-500);
+    }
+
+    @include tablet{
+        background-color: var(--orange-dark-500) !important;
+    }
+
+    object{
+        margin: 0;
+    }
+}
+

@@ -1,0 +1,75 @@
+@use "../../scss/" as *;
+
+.footer{
+    width: 100%;
+    margin-top: 96rem;
+    color: var(--white);
+    @include tablet {
+       height: auto;
+       margin-top: 77rem;
+    }
+    @include mobile {
+       margin-top: 44rem;
+    }
+   
+    .upContainerFooter{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @include mobile{
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .year{
+            @include fnt(14, 20, $weight: 600, $color: var(--gray-400));
+        }
+
+        .ccContainer{
+            display: flex;
+            align-items: center;
+            gap: 8rem;
+
+            .conainerIcoCC{
+                display: flex;
+                gap: 4rem;
+            }
+
+            h5{
+                @include fnt(10, 10, $weight: 600, $color: var(--gray-400));
+            }
+            h6{
+                @include fnt(10, 10, $weight: 400, $color: var(--gray-400));
+            }
+        }
+        .condificial{
+            @include fnt(14, 24, $weight: 500, $color: var(--gray-400), $font: $PTMono);
+            cursor: pointer;
+        }
+    }
+
+    .downContainerFooter{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 12rem;
+        margin:12rem 0 32rem;
+        border-top: 1rem solid var(--gray-500);
+        .containerIndicator{
+            display: flex;
+            align-items: center;
+            gap: 8rem;
+
+            .indicatorLogo{
+                @include fnt(16, 24, $weight: 700, $color: var(--gray-400), $font: $PTMono);
+            }
+        }
+
+        .contacts{
+            @include fnt(16, 24, $weight: 500, $color: var(--gray-400), $font: $PTMono);
+            cursor: pointer;
+        }
+    }
+}

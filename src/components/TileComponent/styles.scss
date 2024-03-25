@@ -1,0 +1,13 @@
+@use "../../scss/" as *;
+
+.tileContainer{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 4rem;
+    margin-bottom: 40rem;
+
+    img{
+        object-fit: cover;
+        border-radius: 4rem;
+    }
+}

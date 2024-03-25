@@ -1,0 +1,8 @@
+@use "../../scss/" as *;
+
+.titleCounter{
+    @include fnt(56, 64, $weight: 600, $color: var(--gray-400));
+}
+.subTitleCounter{
+    @include fnt(16, 64, $weight: 600, $color: var(--gray-400));
+}

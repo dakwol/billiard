@@ -1,0 +1,64 @@
+@use "../../scss/" as *;
+.slider {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+
+  .main-image{
+    height: 100%;
+  }
+  
+  .main-image img {
+    width: 100%; /* Растянуть изображение на всю ширину родительского контейнера */
+    max-height: 668rem; /* Максимальная высота основного изображения */
+    border-radius: 4rem;
+    object-fit: cover; /* Изображение будет заполнено по размеру, обрезаясь при необходимости */
+    transition: .2s ease-in-out;
+  }
+  
+  .thumbnails {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 10rem; /* Отступ между основным изображением и миниатюрами */
+    width: 100%;
+    transition: .2s ease-in-out;
+  }
+  
+  .thumbnail {
+    width: 96rem; /* Ширина миниатюры */
+    height: 96rem; /* Высота автоматически рассчитывается по соотношению сторон */
+    margin: 0 5rem; /* Отступы между миниатюрами */
+    object-fit: cover;
+    border-radius: 4rem;
+    transition: .2s ease-in-out;
+    cursor: pointer; /* Изменение курсора при наведении для обозначения возможности нажатия */
+  }
+  
+  .thumbnail:hover {
+    border: 2rem solid blue; /* Обводка вокруг миниатюры при наведении */
+  }
+
+  .buttonContainerSlider{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 40%;
+    transform: translateY(-40%);
+    justify-content: space-between;
+  }
+  
+  .slideButton{
+    background-color:inherit;
+
+    &:hover{
+      background-color: inherit;
+    }
+
+    object{
+      width: 40rem;
+      height: 80rem;
+      object-fit: contain;
+    }
+  }
